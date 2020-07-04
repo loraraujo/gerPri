@@ -1,121 +1,120 @@
 <?php
 require 'conexao.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <title>Login</title>
+    <title>Login</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="css/shop-item.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/shop-item.css" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <?php
-        require 'menu.php';
-        ?>
+    <?php
+    require 'menu.php';
+    ?>
 
-        <!-- Page Content -->
-        <div class="container">
+    <!-- Page Content -->
+    <div class="container">
 
-            <div class="row">
+        <div class="row">
 
-                
-                <!-- /.col-lg-3 -->
+            <!-- /.col-lg-3 -->
 
-                <div class="col-lg-12" style="margin: auto">
+            <div class="col-lg-12" style="margin: auto">
 
-                    <div class="card mt-4">
+                <div class="card mt-4">
 
-                        <script src="/Template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
-                        <script src="/Template/vendor/bootstrap/js/bootstrap.min.js"></script>
-                        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-                        <!------ Include the above in your HEAD tag ---------->
-
-
-                        <div id="loginbox" style="margin-top:100px;" >                    
-                            <div style="text-align: center;" >
-                                <div class="panel-heading"  style="margin-top: 5%;">
+                    <script src="/Template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
+                    <script src="/Template/vendor/bootstrap/js/bootstrap.min.js"></script>
+                    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                    <!------ Include the above in your HEAD tag ---------->
+                    <?php
+                    if (!isset($_SESSION['email'])) {
+                    ?>
+                        <div id="loginbox" style="margin-top:100px;">
+                            <div style="text-align: center;">
+                                <div class="panel-heading" style="margin-top: 5%;">
                                     <h3>Login</h3>
-                                </div>     
+                                </div>
 
-                                <div style="padding-top:40px;"  >
+                                <div style="padding-top:40px;">
 
-                                    <div style="width: 40%; text-align: center; margin: 0 auto "  >
-                                    <form id="loginform" action="validacao.php"  role="form"  method="post">
+                                    <div style="width: 40%; text-align: center; margin: 0 auto ">
+                                        <form id="loginform" action="validacao.php" role="form" method="post">
 
-                                        <div style="margin-bottom: 15px" >
-                                           
-                                            <input id="login-username" type="email" class="form-control" name="email" value="" placeholder="Informe seu e-mail">                                        
-                                        </div>
+                                            <div style="margin-bottom: 15px">
 
-                                        <div style="margin-bottom: 25px" >
-                                            <input id="login-password" type="password" class="form-control" name="senha" placeholder="Informe a senha">
-                                        </div>
+                                                <input id="login-username" type="email" class="form-control" name="email" value="" placeholder="Informe seu e-mail">
+                                            </div>
 
+                                            <div style="margin-bottom: 25px">
+                                                <input id="login-password" type="password" class="form-control" name="senha" placeholder="Informe a senha">
+                                            </div>
 
-
-                                            <button style="margin-bottom: 50%;"id="botao_submit" name="botao_submit" class="btn btn-secondary btn-lg btn-block" >Acessar</button>
+                                            <button style="margin-bottom: 50%;" id="botao_submit" name="botao_submit" class="btn btn-secondary btn-lg btn-block">Acessar</button>
 
                                     </div>
-                                        
-                                            <!-- Button -->
 
+                                    <!-- Button -->
 
-                                        </div>
-                                    </form>     
                                 </div>
+                                </form>
+
+                            <?php
+                        } else {
+                            echo "<p style='text-align: center; margin: 150px 150px;' >" . $nome[0] . "<br> Você já está logado!</p>";
+                        }
+                            ?>
 
                             </div>
 
-
-
-
                         </div>
 
-
-
-
-                    </div>
-                    <!-- /.card -->
-
-
-                    <!-- /.card -->
-
                 </div>
-                <!-- /.col-lg-9 -->
 
             </div>
+            <!-- /.card -->
+
+
+            <!-- /.card -->
 
         </div>
+        <!-- /.col-lg-9 -->
 
+    </div>
+
+    </div>
+
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Endereço: Av. Jerônimo Figueira da Costa, 3014 - Pozzobon, Votuporanga - SP, 15503-110</p>
+            <p style="color: white; text-align: center;"> Acesse: <a href="http://vtp.ifsp.edu.br/">http://vtp.ifsp.edu.br/ </a>
+
+        </div>
         <!-- /.container -->
-
-        <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-      <p class="m-0 text-center text-white">Endereço: Av. Jerônimo Figueira da Costa, 3014 - Pozzobon, Votuporanga - SP, 15503-110</p>
-                           <p style="color: white; text-align: center;"> Acesse: <a href="http://vtp.ifsp.edu.br/">http://vtp.ifsp.edu.br/ </a>
-
-            </div>
-            <!-- /.container -->
-        </footer>
+    </footer>
 
 
 
-    </body>
+</body>
 
 </html>

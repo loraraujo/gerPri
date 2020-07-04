@@ -106,11 +106,11 @@ if (!isset($_SESSION ["email"]) || !isset($_SESSION["senha"])) {
                                                 ?>
                                                 <tr>
                                                     <td><?php echo $nome; ?></td>
-                                                    <td><?php echo $prontuario; ?></td>
+                                                    <td style="text-align:center;"><?php echo $prontuario; ?></td>
 
 
                                                     <td><?php echo $curso; ?></td>
-                                                    <td><?php echo $modulo; ?></td>
+                                                    <td style="text-align:center;"><?php echo $modulo; ?></td>
 
                                                     <td><a class="btn btn-primary" href="alterar_aluno.php?alu_codigo=<?php echo $codigo_aluno; ?>"
                                                            onclick="">

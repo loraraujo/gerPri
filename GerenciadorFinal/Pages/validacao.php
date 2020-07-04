@@ -6,7 +6,7 @@
         <script type="text/javascript">
             function loginsuccessfully() {
 
-                setTimeout("window.location='Adms.php'", 100);
+                setTimeout("window.location='Orientacoes.php'", 10);
             }
 
             function loginfailed() {
@@ -30,14 +30,12 @@
                 error_reporting(0);
 
                 $email = $_POST['email'];
-                $senha = $_POST['senha'];
+                $senha = md5($_POST['senha']);
 
 
                 $sql = pg_query("SELECT * FROM professores "
                         . "WHERE pro_email = '$email' "
                         . "AND pro_senha = '$senha' ") or die(pg_last_error());
-
-                require_once 'conexao.php';
 
                 $row = pg_num_rows($sql);
                 $dados = pg_fetch_array($sql);
@@ -47,11 +45,9 @@
 
                 if ($row > 0) {
                     session_start();
-                    $_SESSION['email'] = $_POST['email'];
-
-                    // ########################################## TIRAR A SENHA DA SESSION
-                    $_SESSION['senha'] = $_POST['senha'];
-
+                    $_SESSION['email'] = $email;
+                     // ########################################## TIRAR A SENHA DA SESSION
+                     $_SESSION['senha'] = $senha;
                     $_SESSION['pro_nivel'] = $dados ['pro_nivel'];
                     $_SESSION['pro_codigo'] = $dados ['pro_codigo'];
                     echo "<h3>Login efetuado com sucesso!</h3>";
