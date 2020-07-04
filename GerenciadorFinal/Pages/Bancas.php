@@ -182,9 +182,9 @@ where p.pjt_codigo = o.pjt_codigo and a.alu_codigo = o.alu_codigo and pr.pro_cod
                                                 <td><?php echo utf8_encode($aluno); ?></td>
                                                 <td><?php echo utf8_encode($professor); ?></td>
                                                 <td><?php echo utf8_encode($membro1); ?></td>
-                                                <!--td><?php// echo utf8_encode($area1); ?></td-->
+                                                <!--td><?php // echo utf8_encode($area1); ?></td-->
                                                 <td><?php echo utf8_encode($membro2); ?></td>
-                                                <!--td><?php// echo utf8_encode($area2); ?></td-->
+                                                <!--td><?php // echo utf8_encode($area2); ?></td-->
 
 
                                                 <td style="text-align: center; vertical-align:middle;"><a class="btn btn-primary" href="alterar_banca.php?ban_codigo=<?php echo $codigo_banca; ?>" onclick="">
