@@ -1,4 +1,5 @@
 <?php
+//header('Content-Type: text/html; charset=ISO-8859-1');
 @$email = $_SESSION ["email"];
 @$senha = $_SESSION["senha"];
 $sql = pg_query("SELECT * FROM professores "
@@ -13,12 +14,12 @@ $dados = pg_fetch_array($sql);
 
   <head>
 
-    <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Início</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

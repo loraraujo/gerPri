@@ -100,10 +100,10 @@ session_start();
                                 ?>
                                     <tr>
 
-                                        <td><?php echo $tema; ?></td>
+                                        <td><?php echo utf8_encode($tema); ?></td>
                                         <td><?php echo $ano; ?></td>
-                                        <td><?php echo $prof; ?></td>
-                                        <td><?php echo $pf; ?></td>
+                                        <td><?php echo utf8_encode($prof); ?></td>
+                                        <td><?php echo utf8_encode($pf); ?></td>
 
                                     </tr>
 

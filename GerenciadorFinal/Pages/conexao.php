@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";
-$dbname = "GerenciadorFinal";
+$host = "pgsql.onucleo.com.br";
+$dbname = "onucleo";
 
-$user = "postgres";
-$password = "postdba";
+$user = "onucleo";
+$password = "e5z8t4";
 
 $conn = pg_connect("host=$host port=5432 dbname=$dbname user=$user password=$password");
 
